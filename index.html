@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning 1</title>
+
+    <style>
+      * {
+        font-family: sans-serif;
+        color: #444;
+      }
+
+      h1 {
+        font-size: 1.4rem;
+      }
+
+      button{
+        margin: 2rem 0.2rem;
+        font-size: 1.2rem;
+        padding: 10px 22px;
+        font-weight: 600;
+        background: #f2f2f2;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+        transition: 0.2s ease;
+      }
+
+      button:hover{
+        background: #e6e6e6;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.384);
+      }
+    </style>
+  </head>
+
+  <body>
+    <script src="./script.js"></script>
+
+    
+    <button
+  onclick="document.write(`
+    <style>
+        b{
+            color: #1a73e8;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        h1{
+            font-size: 1.4rem;
+            line-height: 2.2rem;
+        }
+        u{
+          color:rgba(22, 1, 71, 0.897);
+          font-weight: bolder; font-family: sans-serif;
+        }
+    </style>
+
+    <h1>
+        <u>Your Correct Account Details:</u><br>
+        Email: <b>${!new_email ? 'Empty!': new_email}</b><br>
+        Password: <b>${!new_password ? 'Empty!': new_password}</b><br><br>
+
+        <u>Login Attempt:</u><br>
+        Email Entered: <b>${!login_email? 'Empty!': login_email}</b><br>
+        Password Entered: <b>${!login_password ? 'Empty!': login_password}</b><br><br><br>
+        <a href='./index.html' style='margin: 2rem 0.2rem;
+        font-size: 1rem; font-family: sans-serif;
+        text-decoration:none;
+        color: black;
+        font-weight: bold;
+        padding: 0.5rem;
+        background: #f2f2f2;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: 0 3px 6px black;'>Recreate your account Again?</a>
+    </h1>
+`)"
+>
+    View Your Email & Password
+</button>
+
+  </body>
+</html>
+
