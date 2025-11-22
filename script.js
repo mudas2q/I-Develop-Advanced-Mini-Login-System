@@ -27,22 +27,27 @@ if (!new_email || !new_password || !login_email || !login_password) {
     document.write(`<h1> ❌ Empty Input — Please fill all the fields. </h1>`);
 }
 else if (new_email !== login_email && new_password !== login_password && !login_email.includes("gmail.com") && !(login_password.length >= 4)){
+    alert(`You Did 3 Mistakes While Creating Your Email & Password: \n1. ❌ Both Email & Password are InValid!- please enter same password, email \n2. Password must be at least 4 characters long.\n 3. Email must contain '@gmail.com'`);
     document.write(`<h1>You Did 3 Mistakes While Creating Your Email & Password:<br>1. ❌ Both Email & Password are InValid!- please enter same password, email<br> 2. Password must be at least 4 characters long.<br> 3. Email must contain '@gmail.com'</h1>`);
 }
 else if (new_password !== login_password && !login_email.includes("@gmail.com") && !(login_password.length >= 4)){
+    alert(`You Did 3 Mistakes While Creating Your Email & Password: \n1. ❌ Incorrect Password! - please enter correct Password \n2. Password must be at least 4 characters long.\n 3. Email must contain '@gmail.com'`);
     document.write(`<h1>You Did 3 Mistakes While Creating Your Email & Password:<br>1. ❌ Incorrect Password! - please enter correct Password<br> 2. Password must be at least 4 characters long.<br> 3. Email must contain '@gmail.com'</h1>`);
 }
 else if (new_email !== login_email && !login_email.includes("@gmail.com") && !(login_password.length >= 4)){
+    alert(`You Did 3 Mistakes While Creating Your Email & Password: \n1. ❌ Incorrect Email!- please enter Correct Email \n2. Password must be at least 4 characters long.\n 3. Email must contain '@gmail.com'`);
     document.write(`<h1>You Did 3 Mistakes While Creating Your Email & Password:<br>1. ❌ Incorrect Email!- please enter Correct Email<br> 2. Password must be at least 4 characters long.<br> 3. Email must contain '@gmail.com'</h1>`);
 }
 else if (!login_email.includes("@gmail.com") && !(login_password.length >= 4) && new_email === login_email && new_password === login_password){
+    alert(`1. ❌ Invalid Email Format! You don't include '@gmail.com' \n 2. Should be at least 4 characters of Password! - Your Password is: ${login_password}.`);
+    console.log(`1. ❌ Invalid Email Format! You don't include '@gmail.com' \n 2. Should be at least 4 characters of Password! - Your Password is: ${login_password}.`)
     document.write(`<h1>1. ❌ Invalid Email Format! You don't include '@gmail.com' <br> 2. Should be at least 4 characters of Password! - Your Password is: ${login_password}.</h1>`);
 }
-// 2. EMAIL FORMAT CHECK (only check created email)
-else if (!new_email.includes("@") || !new_email.includes("gmail.com")) {
-    alert("❌ Invalid Email Format! Email must include '@gmail.com'");
-    console.log("❌ Invalid Email Format! Email must include '@gmail.com'");
-    document.write(`<h1> ❌ Invalid Email Format! Email must include '@gmail.com' </h1>`);
+
+else if (!new_email.includes("@gmail.com") && new_email !== login_email && new_password !== login_password){
+    alert(`1. ❌ Invalid Email Format! Email must include '@gmail.com' \n2. ❌ Both Email & Password are not Same!`);
+    console.log(`1. ❌ Invalid Email Format! Email must include '@gmail.com' \n2. ❌ Both Email & Password are not Same!`);
+    document.write(`<h1>1. ❌ Invalid Email Format! Email must include '@gmail.com' <br> 2. ❌ Both Email & Password are not Same!</h1>`);
 }
 
 // 3. EMAIL MUST NOT START WITH @gmail.com
@@ -51,6 +56,16 @@ else if (new_email.startsWith("@gmail.com")) {
     console.log("❌ Invalid Email — You must write a name before '@gmail.com'");
     document.write(`<h1> ❌ Invalid Email — You must write a name before '@gmail.com' </h1>`);
 }
+// 2. EMAIL FORMAT CHECK (only check created email)
+else if (!new_email.includes("@") || !new_email.includes("gmail.com")) {
+    alert("❌ Invalid Email Format! Email must include '@gmail.com'");
+    console.log("❌ Invalid Email Format! Email must include '@gmail.com'");
+    document.write(`<h1> ❌ Invalid Email Format! Email must include '@gmail.com' </h1>`);
+}
+
+
+
+
 
 // 4. WRONG EMAIL + WRONG PASSWORD
 else if (new_email !== login_email && new_password !== login_password) {
@@ -93,7 +108,6 @@ else {
     console.log("✅ Login Successful! Welcome.");
     document.write(`<h1>✅ Login Successful! Welcome. - <i>Every thing is Correct.</i></h1>`);
 }
-
 
 
 
