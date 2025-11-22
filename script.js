@@ -29,6 +29,12 @@ if (!new_email || !new_password || !login_email || !login_password) {
 else if (new_email !== login_email && new_password !== login_password && !login_email.includes("gmail.com") && !(login_password.length >= 4)){
     document.write(`<h1>You Did 3 Mistakes While Creating Your Email & Password:<br>1. ❌ Both Email & Password are InValid!- please enter same password, email<br> 2. Password must be at least 4 characters long.<br> 3. Email must contain '@gmail.com'</h1>`);
 }
+else if (new_password !== login_password && !login_email.includes("gmail.com") && !(login_password.length >= 4)){
+    document.write(`<h1>You Did 3 Mistakes While Creating Your Email & Password:<br>1. ❌ Incorrect Password! - please enter correct Password<br> 2. Password must be at least 4 characters long.<br> 3. Email must contain '@gmail.com'</h1>`);
+}
+else if (new_email !== login_email && !login_email.includes("gmail.com") && !(login_password.length >= 4)){
+    document.write(`<h1>You Did 3 Mistakes While Creating Your Email & Password:<br>1. ❌ Incorrect Email!- please enter Correct Email<br> 2. Password must be at least 4 characters long.<br> 3. Email must contain '@gmail.com'</h1>`);
+}
 
 // 2. EMAIL FORMAT CHECK (only check created email)
 else if (!new_email.includes("@") || !new_email.includes("gmail.com")) {
@@ -85,6 +91,7 @@ else {
     console.log("✅ Login Successful! Welcome.");
     document.write(`<h1>✅ Login Successful! Welcome. - <i>Every thing is Correct.</i></h1>`);
 }
+
 
 
 
